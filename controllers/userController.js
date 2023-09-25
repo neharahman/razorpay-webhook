@@ -33,6 +33,12 @@ module.exports.login = async (req,res) =>{
             message:'successfully login',
             token:jwtToken
         })
+    }else{
+        res.status(200).json({
+            status:'failure',
+            message:'mobile or password does not match',
+            token:jwtToken
+        })
     }
-    res.send('hello login')
+    
 }
